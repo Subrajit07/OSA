@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Shop With Us</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link th:href="@{/css/home.css}" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">
+	  	<img src="/images/eco-shop-logo.jpg" style="height: 40px;"/>𝑬𝒸ₒ𝐵ₐ𝓏ₐₐ𝓇
+	</div>
+    <nav>
+	       <a th:href="@{/products/home}"
+			   th:classappend="${isHome} ? ' active' : ''">Home</a>
+	       <a th:href="@{/products/{category}(category='FOODS')}">Foods</a>
+	       <a th:href="@{/products/{category}(category='VEGETABLES')}">Vegetables</a>
+	       <a th:href="@{/products/{category}(category='ELECTRONICS')}">Electronics</a>
+	       <a th:href="@{/products/{category}(category='CLOTHES')}">Clothes</a>
+	       <a th:href="@{/products/{category}(category='SPORTS')}">Sports</a>
+	       <a th:href="@{/products/{category}(category='BOOKS')}">Books</a>
+	       <a th:href="@{/products/profile}"><i class="bi bi-person-circle"></i> Profile</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Shop With Us</h1>
+      <p>Limited-time offers you don’t want to miss ! Shop now. Thank yourself later.</p>
+      <a class="btn btn-primary" th:href="@{/products/{category}(category='ELECTRONICS')}">SHOP NOW</a>
+      <a class="btn btn-secondary" th:href="@{/products/{category}(category='FOODS')}">GET START</a>
+    </div>
+  </section>
+
+  	<section class="products-section">
+    	<h2>Our Products</h2>
+    	<p>We believe great products make everyday life better — and that’s exactly what you’ll find here, all backed by our promise of quality and care.</p>
+	</section>
+	
+	<script>
+	    setTimeout(() => {
+	        const toast = document.querySelector('.toast-success');
+	        if(toast) toast.style.display = 'none';
+	    }, 3000);
+	</script>
+</body>
+</html>
